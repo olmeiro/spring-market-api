@@ -5,6 +5,7 @@ import com.tienda.deunomarket.domain.repository.ProductRepository;
 import com.tienda.deunomarket.persistence.crud.ProductoCrudRepository;
 import com.tienda.deunomarket.persistence.entities.Producto;
 import com.tienda.deunomarket.persistence.mapper.ProductMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,7 +13,9 @@ import java.util.Optional;
 
 @Repository
 public class ProductoRepository implements ProductRepository {
+    @Autowired
     private ProductoCrudRepository productoCrudRepository;
+    @Autowired
     private ProductMapper mapper;
 
 //    public List<Producto> getAll() {
