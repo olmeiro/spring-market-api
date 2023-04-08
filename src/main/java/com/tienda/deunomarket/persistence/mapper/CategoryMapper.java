@@ -19,7 +19,7 @@ public interface CategoryMapper {
                     @Mapping(source = "descripcion", target = "active") ,
             }
     )
-    Category toCategory(Category categoria); //Convertimos una categoria en Category
+    Category toCategory(Categoria categoria); //Convertimos una categoria en Category
 
     //Conversion externa
     //mapeo inverso al anterior sin necesidad de hacerlo de nuevo.
