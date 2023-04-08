@@ -12,7 +12,6 @@ public class ComprasProducto {
 
     @EmbeddedId //PK compuesta
     private ComprasProductoPK id;
-
     private Integer cantidad;
     private Double total;
     private Boolean estado;
@@ -20,6 +19,10 @@ public class ComprasProducto {
     @ManyToOne
     @JoinColumn (name = "id_compra", insertable = false,updatable = false)
     private Compra compra;
+
+    @ManyToOne
+    @JoinColumn (name = "id_producto", insertable = false,updatable = false)
+    private Producto producto;
 
     public Compra getCompra() {
         return compra;
@@ -36,10 +39,6 @@ public class ComprasProducto {
     public void setProducto(Producto producto) {
         this.producto = producto;
     }
-
-    @ManyToOne
-    @JoinColumn (name = "id_producto", insertable = false,updatable = false)
-    private Producto producto;
 
     public ComprasProductoPK getId() {
         return id;

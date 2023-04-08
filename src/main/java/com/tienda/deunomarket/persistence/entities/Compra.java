@@ -33,6 +33,14 @@ public class Compra {
 
     private String estado;
 
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
+    private Cliente cliente;
+
+    //productos de una compra:
+    @OneToMany(mappedBy = "compra")
+    private List<ComprasProducto> productos;
+
     public Cliente getCliente() {
         return cliente;
     }
@@ -48,14 +56,6 @@ public class Compra {
     public void setProductos(List<ComprasProducto> productos) {
         this.productos = productos;
     }
-
-    @ManyToOne
-    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
-    private Cliente cliente;
-
-    //productos de una compra:
-    @OneToMany(mappedBy = "compra")
-    private List<ComprasProducto> productos;
 
     public Integer getIdCompra() {
         return idCompra;
