@@ -56,4 +56,20 @@ public class ProductoRepository implements ProductRepository {
     public void delete(int productId){
         productoCrudRepository.deleteById(productId);
     }
+
+    //actualizar producto:
+    @Override
+    public Product update(Product product) {
+
+        return getProduct(product.getProductId()).map(productToUpdate -> {
+            productToUpdate.setName(product.getName());
+            productToUpdate.setCategoryId(product.getCategoryId());
+            productToUpdate.setPrice(product.getPrice());
+            productToUpdate.setStock(product.getStock());
+            productToUpdate.setActive(product.isActive());
+            Producto producto = mapper.toProducto(productToUpdate);
+            return save(mapper.toProduct(producto));
+        }).orElse(null);
+
+    }
 }

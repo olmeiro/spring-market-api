@@ -47,4 +47,8 @@ public class ProductService {
             return false;
         }
     }
+
+    public Product update(Product product){
+        return productRepository.update(product);
+    }
 }
