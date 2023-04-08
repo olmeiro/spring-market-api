@@ -16,7 +16,7 @@ public interface ProductoCrudRepository extends CrudRepository<Producto, Integer
     //  List<Producto> getByCategoria(int idCategoria);
 
     //  Con Query methods: sin consultas SQL ->
-    List<Producto> findByIdCategoriaOrderByAsc(int idCategoria);
+    List<Producto> findByIdCategoriaOrderByNombreAsc(int idCategoria);
 
     //Operadores opcionales de Query methods:
     //Productos escazos
