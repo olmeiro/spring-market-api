@@ -5,12 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table (name = "categorias")
 public class Categoria {
-
     @Id
     @Column (name = "id_categoria")
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -19,6 +20,9 @@ public class Categoria {
     private String descripcion;
 
     private Boolean estado;
+
+    @OneToMany (mappedBy = "categoria")
+    private List<Producto> productos;
 
     public Integer getIdCategoria() {
         return idCategoria;
