@@ -1,0 +1,26 @@
+version: '3'
+services:
+  postgres-market:
+    image: "postgres"
+    container_name: postgres-market
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=springmarket
+      - POSTGRES_PASSWORD=springmarket
+      - POSTGRES_DATABASES=springmarket
+      - HOSTNAME=springmarket.postgres.db
+    volumes:
+      - postgresMarket:/var/lib/postgres/data
+
+volumes:
+  postgresMarket:
+    external: true
+
+
+  #Crear volumen
+  # docker volume create postgresMarket
+
+  #Iniciar su docker compose
+  # Ubicarse en la ruta donde este el archivo docker-compose.yml
+# docker-compose -p postgresmarket up -d
