@@ -29,6 +29,82 @@
 			"response": []
 		},
 		{
+			"name": "GET All Purchases",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/deuno-market/api/purchases/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"deuno-market",
+						"api",
+						"purchases",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ClientById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/deuno-market/api/purchases/client/4546221",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"deuno-market",
+						"api",
+						"purchases",
+						"client",
+						"4546221"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Save Purchase",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"clientId\": \"4546221\",\r\n        \"date\": \"2023-08-04T17:30:00\",\r\n        \"paymentMethod\": \"T\",\r\n        \"comment\": \"\",\r\n        \"state\": \"P\",\r\n        \"items\": [\r\n            {\r\n                \"productId\": 1,\r\n                \"quantity\": 10,\r\n                \"total\": 3000.0,\r\n                \"active\": true\r\n            },\r\n            {\r\n                \"productId\": 24,\r\n                \"quantity\": 10,\r\n                \"total\": 4000.0,\r\n                \"active\": true\r\n            },\r\n            {\r\n                \"productId\": 27,\r\n                \"quantity\": 10,\r\n                \"total\": 9000.0,\r\n                \"active\": true\r\n            },\r\n            {\r\n                \"productId\": 36,\r\n                \"quantity\": 10,\r\n                \"total\": 40000.0,\r\n                \"active\": true\r\n            },\r\n            {\r\n                \"productId\": 49,\r\n                \"quantity\": 20,\r\n                \"total\": 16400.0,\r\n                \"active\": true\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/deuno-market/api/purchases/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"deuno-market",
+						"api",
+						"purchases",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "GET ProductById",
 			"request": {
 				"method": "GET",
@@ -112,7 +188,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"productId\": 5,\r\n    \"name\": \"Lechuga\",\r\n    \"categoryId\": 1,\r\n    \"price\": 4000.0,\r\n    \"stock\": 1300,\r\n    \"active\": true\r\n}",
+					"raw": "{\r\n    \"productId\": 5,\r\n    \"name\": \"Lechuga\",\r\n    \"categoryId\": 1,\r\n    \"price\": 4000.0,\r\n    \"stock\": 2300,\r\n    \"active\": true\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -142,7 +218,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8090/deuno-market/api/products/delete/51",
+					"raw": "http://localhost:8090/deuno-market/api/products/delete/5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -153,7 +229,7 @@
 						"api",
 						"products",
 						"delete",
-						"51"
+						"5"
 					]
 				}
 			},
