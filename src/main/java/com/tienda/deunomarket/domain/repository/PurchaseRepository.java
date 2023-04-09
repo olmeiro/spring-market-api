@@ -1,5 +1,4 @@
 package com.tienda.deunomarket.domain.repository;
-
 import com.tienda.deunomarket.domain.Purchase;
 
 import java.util.List;

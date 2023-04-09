@@ -1,5 +1,6 @@
 package com.tienda.deunomarket.persistence.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
@@ -30,7 +32,6 @@ public class Compra {
     private String medioPago;
 
     private String comentario;
-
     private String estado;
 
     @ManyToOne
@@ -38,7 +39,7 @@ public class Compra {
     private Cliente cliente;
 
     //productos de una compra:
-    @OneToMany(mappedBy = "compra")
+    @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})
     private List<ComprasProducto> productos;
 
     public Cliente getCliente() {

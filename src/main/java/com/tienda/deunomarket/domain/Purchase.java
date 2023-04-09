@@ -59,12 +59,12 @@ public class Purchase {
     public void setState(String state) {
         this.state = state;
     }
-
-    public List<PurchaseItem> getItem() {
+    public List<PurchaseItem> getItems() {
         return items;
     }
 
-    public void setItem(List<PurchaseItem> item) {
-        this.items = item;
+    public void setItems(List<PurchaseItem> items) {
+        this.items = items;
     }
+
 }
